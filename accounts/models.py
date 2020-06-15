@@ -7,7 +7,7 @@ class Customer(models.Model):
     date_created = models.DateTimeField(auto_now_add=True,null=True)
 
     def __str__(self):
-        return "Name: {}, Email: {} and Phone: {}".format(self.name,self.email,self.phone)
+        return "Name: {}".format(self.name)
 
 class Tag(models.Model):
     name = models.CharField(max_length=200, null=True)
@@ -40,4 +40,4 @@ class Order(models.Model):
     date_created = models.DateTimeField(auto_now_add=True,null=True) 
     status = models.CharField(max_length=200,null=True,choices=STATUS)
     def __str__(self):
-        return "Status: {}".format(self.status)
+        return "Product: {}".format(self.product)

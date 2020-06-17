@@ -90,14 +90,14 @@ def createOrder(request, pk):
 
 def updateOrder(request, pk):
     order = Order.objects.get(id=pk)
-    form = OrderForm(instance=order)
+    formset = OrderForm(instance=order)
     if request.method == 'POST':
         #print('Printing POST:', request.POST)
-        form = OrderForm(request.POST, instance=order)
-        if form.is_valid():
-            form.save()
+        formset = OrderForm(request.POST, instance=order)
+        if formset.is_valid():
+            formset.save()
             return redirect('/')
-    context = {'form':form}
+    context = {'formset':formset}
     return render(request, 'accounts/order_form.html', context)
 
 def deleteOrder(request, pk):
@@ -113,8 +113,6 @@ def createCustomer(request):
         form = CreateCustomerForm(request.POST)
         if form.is_valid():
             form.save()
-            #user = form.cleaned_data.get('username')
-            #messages.success(request, 'Account created for ' + user)
             return redirect('home')
     context={'form':form}
     return render(request, 'accounts/createcustomer.html', context)

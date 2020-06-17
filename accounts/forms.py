@@ -14,3 +14,8 @@ class CreateUserForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
+class CreateCustomerForm(ModelForm):
+    class Meta:
+        model = Customer
+        fields = '__all__'
+        exclude = ['date_created']

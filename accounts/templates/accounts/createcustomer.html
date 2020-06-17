@@ -1,0 +1,17 @@
+<h1>Create Customer</h1>
+<form method = "POST" action="">
+	{% csrf_token %}
+	{{form.name.label}}
+
+	{{form.name}}
+	
+	{{form.phone.label}}
+
+	{{form.phone}}
+
+	{{form.email.label}}
+
+	{{form.email}}
+
+	<input type="submit" name="Create Customer">
+</form>

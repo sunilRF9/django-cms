@@ -6,9 +6,9 @@
 <div class="row">
 	<div class="col-md">
 		<div class="card card-body">
-			<h5>Customer:</h5>
+			<h3>This is, {{customer.name}}</h3>
 			<hr>
-			<a class="btn btn-outline-info  btn-sm btn-block" href="">Update Customer</a>
+			<!--<a class="btn btn-outline-info  btn-sm btn-block" href="">Update Customer</a>--!>
 			<a class="btn btn-outline-info btn-sm btn-block" href="{% url 'create_order' customer.id %}">Place Order</a>
 
 		</div>
@@ -16,16 +16,16 @@
 
 	<div class="col-md">
 		<div class="card card-body">
-			<h5>Contact Information</h5>
+			<h3>Contact Information</h3>
 			<hr>
-			<p>Email: {{customer.email}} </p>
-			<p>Phone: {{customer.phone}}</p>
+			<h5>Email: {{customer.email}} </h5>
+			<h5>Phone: {{customer.phone}}</h5>
 		</div>
 	</div>
 
 	<div class="col-md">
 		<div class="card card-body">
-			<h5>Total Orders</h5>
+			<h3>Total Orders</h3>
 			<hr>
 			<h1 style="text-align: center;padding: 10px">{{order_count}}</h1>
 		</div>

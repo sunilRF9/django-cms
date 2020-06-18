@@ -3,6 +3,7 @@
 
 ### Django ###
 pass.txt
+*.csv
 *.log
 *.pot
 *.pyc
